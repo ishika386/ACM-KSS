@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            background:url(https://cdn.pixabay.com/photo/2017/04/05/04/44/background-2203989_1280.jpg);
+           
+            margin-left: 45px;
+            margin-right: 45px;
+            color: rgb(20, 123, 27);
+        }
+        form{
+            border: 2px solid green;
+            height: 700px;
+            width: 650px;
+            padding-left: 35px;
+            padding-right: 20px;
+        }
+    </style>
+    <form>
+        <h1>ABC Pvt Ltd</h1>
+        <h2>EMPLOYEE RECRUITMENT FORM</h2>
+        <label>NAME</label>
+        <input type="text"name="name"/><br><hr>
+        <label>E-mail</label>
+        <input type="email"name="email"/><br><hr>
+        <label>Phone no.</label>
+        <input type="tel"name="phone no."/><br><hr>
+        <label>Gender</label><br>
+        <input type="radio"name="gender"value="Male"/>Male
+        <input type="radio"name="gender"value="Female"/>Female
+        <input type="radio"name="gender"value="other"/>Other<br><hr>
+        <label>DOB</label>
+        <input type="date"name="DOB"/><br><hr>
+        <label>Country</label>
+        <select>
+            <option>INDIA</option>
+            <option>USA</option>
+            <option>RUSSIA</option>
+            <option>NEPAL</option><hr>
+        </select>
+        <HR>
+            Employment desired :<br>
+            <label>Position applied for</label><br>
+            <input type="checkbox"name="job position"/>Data Analyst
+            <input type="checkbox"name="job position"/>Web Developer
+            <input type="checkbox"name="job position"/>Web designer
+            <input type="checkbox"name="job position"/>App developer<br><hr>
+            <label>Date you can start</label>
+            <INPUT type="date"name="date of joining"/><br><hr>
+            <label>Qualification</label>
+            <input type="text"name="qualifications"/><br><hr>
+            <button>SUBMIT</button>
+    </form>
+</body>
+</html>

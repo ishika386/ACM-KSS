@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average Calculator</title>
+</head>
+<body>
+    <h2>Average Calculator</h2>
+    <button onclick="calculateAverage()">Calculate Average</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateAverage() {
+            const input = prompt("Enter numbers separated by commas:");
+            
+            if (!input) {
+                document.getElementById("result").textContent = "No input provided.";
+                return;
+            }
+            const numbers = input.split(',').map(num => parseFloat(num.trim()));
+
+            if (numbers.some(isNaN)) {
+                document.getElementById("result").textContent = "Please enter valid numbers.";
+                return;
+            }
+            const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+             const average = sum / numbers.length;
+            document.getElementById("result").textContent = `The average is: ${average}`;
+        }
+    </script>
+</body>
+</html>

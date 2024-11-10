@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-div {
+         margin:0;
+        padding:13px;
+        border: 2px;
+        border-width: 5px;
+        border-radius: 5px;
+        border:1px solid rgb(212, 74, 74);
+        width:300px;
+        background-color: rgb(176, 111, 111);
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 8px 0px;
+            gap: 5px;
+        }
+        button{
+            background-color: rgb(176, 111, 111);
+            border-color: brown;
+            margin: 0px;
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            width: 70px;
+            font-size: larger;
+            color: azure;
+        }
+       .inputbox{
+            padding-top: 25px;
+            background-color: rgb(176, 111, 111); 
+            border-color: brown;
+            border-width: 2px;
+            font-size: 11.5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-div">  
+<div class="row">
+    <span>
+      <input type="text"id="inputBox"class="inputbox" />
+     </span>
+     <button>AC</button>
+     <button>DEL</button>
+</div>
+<div class="row"id="row">
+    
+    <button onclick="" ID="num1"class="button">1</button>
+    <button onclick="" id="num2"class="button">2</button>
+    <button onclick="" id="num3"class="button">3</button>
+    <button onclick=""id="num+"class="button">+</button>
+
+</div>
+    <div  class="row">
+        <button onclick="" id="num4"class="button">4</button>
+        <button onclick=""id="num5"class="button">5</button>
+        <button onclick=""id="num6"class="button">6</button>
+        <button onclick=""id="num-"class="button">-</button>
+
+    </div>
+    <div  class="row">
+        <button onclick=""id="num7"class="button">7</button>
+        <button onclick=""id="num8"class="button">8</button>
+        <button onclick=""id="num9"class="button">9</button>
+        <button onclick=""id="numx"class="button">x</button>
+
+    </div>
+    <div  class="row">
+        <button onclick=""id="num0"class="button">0</button>
+        <button onclick=""id="num."class="button">.</button>
+        <button onclick="" id="num="class="button">=</button>
+        <button onclick=""id="num/"class="button">/</button>
+
+    </div>
+    </div>
+    <script>
+        let input = document.getElementById('inputBox');
+        let buttons = document.querySelectorAll
+        ('button');
+
+        let string ="";
+        let arr = Array.from(buttons);
+        arr.forEach(button=> {
+            button.addEventListener('click',(e)=>{
+                if (e.target.innerHTML == '='){
+                    string = eval(string);
+                    input.value = string;
+                }
+                else if (e.target.innerHTML == 'AC'){
+                    string = "";
+                    input.value = string;
+                }
+                else if (e.target.innerHTML == 'DEL'){
+                    string = string.substring(0, string.length-1);
+                    input.value = string;
+                }
+               else {
+                string += e.target.innerHTML;
+                input.value = string;
+               }
+
+            })
+    })
+        </script>
+        
+</body>
+</html>
+        
