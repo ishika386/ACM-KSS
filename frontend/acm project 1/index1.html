@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="w-full h-[100vh] bg-[#DFF2EB]">
+        <div class="h-[8vh] bg-[#7AB2D3] justify-center items-center flex ">
+            <div class="justify-center items-center flex gap-2">
+                <div>
+                    <input type="text" id="inputbar"placeholder="Theme" class="p-2 rounded-md border-2"/>
+                </div>
+                <div>
+                    <img src="search.png" onclick="search()" height="30px" width="30px" alt="search icon"/>
+                </div>
+
+            </div>
+        </div>
+        <div class="justify-center items-center px-80 w-full h-full">
+            <div id="photosec"class="grid grid-cols-3 gap-4 w-full overflow-y-auto  pt-40 max-h-[92vh] flex justify-center items-center m-0">
+            </div>
+        </div>
+    </div>
+    <script>
+        async function search(){
+            const inputData=document.getElementById("inputbar").value
+            const res= await fetch("https://wallpaper.acmsscbs.in/api/search?q="+inputData)
+            const data= await res.json()
+            const main=document.getElementById("photosec")
+            main.innerHTML=''
+            console.log(data)
+            for(var i=0;i<data['wallpaper'].length;i++){
+                var url=(data.wallpaper[i].image)
+                var img=document.createElement("img")
+                img.setAttribute('src',url)
+                img.classList=['w[20vh] h-auto m-auto']
+                main.appendChild(img)
+
+            }
+            
+        }
+    </script>
+</body>
+</html>
