@@ -9,11 +9,11 @@
     <h2>Factorial Calculator</h2>
     <input type="number" id="numberInput" placeholder="Enter a number" min="0" />
     <button onclick="calculateFactorial()">Submit</button>
-    <p id="result"></p>
+    <p id="result" style="color:red"></p>
 
     <script>
         function calculateFactorial() {
-            const number = parseInt(document.getElementById("numberInput").value);
+            const number = document.getElementById("numberInput").value
             let result = 1;
 
             if (isNaN(number) || number < 0) {

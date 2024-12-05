@@ -1,0 +1,74 @@
+<html>
+    <head>
+       <title>Frames</title>     
+       <script>
+           
+            function loadFaculty() {
+            var iframeEle=document.getElementById("iFrame");
+            iframeEle.src = "faculty-details.html";
+            }
+            function loadCourses() {
+            var iframeEle=document.getElementById("iFrame");
+            iframeEle.src = "course-details.html";
+            }
+           
+            </script>
+    </head>
+    <style>
+       .top-horizontal{
+           height:30%;
+           background-color: aquamarine;
+       }
+       .bottom-horizontal {
+           display:flex;
+           justify-content: left;
+height:70%;
+           
+       }
+       #left-pane{
+           width: 30%;
+           background-color: burlywood;
+       }
+       #right-pane {
+           background-color: coral;
+           width:70%;
+       }
+       a {
+               color: red;
+               font-size:20px;
+               cursor: pointer;
+               display: block;
+           }
+           iframe {
+               width: 500px;
+               height:100px;
+           }
+    </style>
+<body>
+
+<section class="top-horizontal">
+        <header>
+                <h1>SSCBS</h1> 
+            </header>
+</section>
+<section class="bottom-horizontal">
+        <section id="left-pane">
+                <nav>
+                    <a onclick="loadFaculty()"> Faculty</a>
+                    <a onclick="loadCourses()"> Courses</a>
+                </nav>
+        </section>
+        <section id="right-pane">
+            <iframe id="iFrame">
+               
+            </iframe>
+                   
+        </section>
+</section>
+
+
+
+
+
+</body>
+</html>

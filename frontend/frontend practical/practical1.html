@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Box</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      border: 2px solid black;
+      width: 80%;
+      margin: 50px auto;
+      height: 300px;
+    }
+
+    .left-box, .right-box {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .left-box {
+      border-right: 2px solid black;
+    }
+
+    .image {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-box">
+      <img id="image" src="images1.png" alt="Image" class="image">
+      <button id="changeButton">Change</button>
+    </div>
+    <div class="right-box">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quo optio voluptas quia aliquam blanditiis, facilis minus qui odio eligendi placeat excepturi ipsum nihil deserunt harum ab soluta! Doloribus, delectus.</p>
+    </div>
+  </div>
+
+  <script>
+    const image = document.getElementById("image");
+    const button = document.getElementById("changeButton");
+
+
+    const image1 = "images1.png";
+    const image2 = "images2.png";
+
+    function changeImage() {
+      image.src = image.src.includes(image1) ? image2 : image1;
+    }
+
+   
+    image.addEventListener("mouseover", changeImage);
+    button.addEventListener("click", changeImage);
+  </script>
+</body>
+</html>
